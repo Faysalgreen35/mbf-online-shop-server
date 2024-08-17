@@ -39,6 +39,6 @@ To set up the project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Faysalgreen35/mbf-online-shop-client
+   git clone https://github.com/Faysalgreen35/mbf-online-shop-server
    cd mbf-online-shop-server
 
