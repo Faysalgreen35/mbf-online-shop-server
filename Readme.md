@@ -4,10 +4,10 @@
 MBF Online Shop is a comprehensive platform designed to help people find and adopt pets in need. Our mission is to connect potential pet owners with pets that are looking for a loving home, and to support the well-being of all animals through community engagement and donation campaigns. Whether you're looking to adopt a cat, dog, rabbit, fish, or any other pet, our website provides a seamless and enjoyable experience.
 
 ## Frontend Live Link
-[Pet Adoption Frontend](https://pet-adoption-eccce.web.app)
+[MBF Online Shop Frontend](https://mbf-shop.web.app/)
 
 ## Backend Link
-[Pet Adoption Backend](https://pet-adoption-server-delta.vercel.app)
+[MBF Online Shop Backend](https://spw-app-server.vercel.app/)
 
 ## Features
 - **Navbar**: Includes a logo, navigation links (Home, Pet Listing, Donation Campaigns, Login/Register), and a user profile section with a dropdown menu.
@@ -52,4 +52,5 @@ To set up the project locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/programming-hero-web-course1/b9a12-server-side-Faysalgreen35
-   cd pet-adoption-server
+   cd mbf-online-shop-server
+
