@@ -1,7 +1,7 @@
-# Pet Adoption
+# MBF Online Shop
 
 ## Introduction
-Pet Adoption is a comprehensive platform designed to help people find and adopt pets in need. Our mission is to connect potential pet owners with pets that are looking for a loving home, and to support the well-being of all animals through community engagement and donation campaigns. Whether you're looking to adopt a cat, dog, rabbit, fish, or any other pet, our website provides a seamless and enjoyable experience.
+MBF Online Shop is a comprehensive platform designed to help people find and adopt pets in need. Our mission is to connect potential pet owners with pets that are looking for a loving home, and to support the well-being of all animals through community engagement and donation campaigns. Whether you're looking to adopt a cat, dog, rabbit, fish, or any other pet, our website provides a seamless and enjoyable experience.
 
 ## Frontend Live Link
 [Pet Adoption Frontend](https://pet-adoption-eccce.web.app)
