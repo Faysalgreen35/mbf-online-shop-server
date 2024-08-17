@@ -135,50 +135,7 @@ async function run() {
       const result = await userCollection.deleteOne(query);
       res.send(result);;
     })
-
-  //   app.get('/products', async (req, res) => {
-  //     const page = parseInt(req.query.page) || 0;  // Default to page 0
-  //     const size = parseInt(req.query.size) || 10;  // Default to 10 items per page
-  //     const sortField = req.query.sortField || 'dateAdded';  // Default sort by dateAdded
-  //     const sortOrder = req.query.sortOrder === 'desc' ? -1 : 1;  // Default ascending
-  //     const brand = req.query.brand || '';  // Filtering by brand (optional)
-  //     const category = req.query.category || '';  // Filtering by category (optional)
-  //     const minPrice = parseFloat(req.query.minPrice) || 0;  // Minimum price filter
-  //     const maxPrice = parseFloat(req.query.maxPrice) || Infinity;  // Maximum price filter
-  
-  //     // Building the query object
-  //     const query = {
-  //         price: { $gte: minPrice, $lte: maxPrice }  // Filtering by price range
-  //     };
-  
-  //     if (brand) {
-  //         query.brand = brand;
-  //     }
-  
-  //     if (category) {
-  //         query.category = category;
-  //     }
-  
-  //     console.log('pagination query', page, size, sortField, sortOrder, query);
-  
-  //     try {
-  //         const totalProducts = await productCollection.find(query).count();  // Get total count for filtered products
-  //         const products = await productCollection.find(query)
-  //             .sort({ [sortField]: sortOrder })  // Sorting by the specified field and order
-  //             .skip(page * size)  // Pagination: skip to the correct page
-  //             .limit(size)  // Pagination: limit the number of items per page
-  //             .toArray();
-  
-  //         res.send({
-  //             totalProducts,  // Send the total number of products
-  //             products  // Send the paginated and sorted products
-  //         });
-  //     } catch (error) {
-  //         console.error('Error fetching products:', error);
-  //         res.status(500).send('Internal Server Error');
-  //     }
-  // });
-  
+ 
     app.get('/products', async (req, res) => {
       const page = parseInt(req.query.page);
       const size = parseInt(req.query.size);
