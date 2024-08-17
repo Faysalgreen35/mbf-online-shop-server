@@ -28,9 +28,6 @@ MBF Shop is a full-stack single-page e-commerce website built with the MERN stac
 ## Authentication in Firebase
 Firebase Authentication is used to manage user authentication and provide a secure login/register experience. Users can sign up with their email or through social media accounts. Firebase also handles password recovery and user session management.
 
-## Flowbite
-Flowbite is a component library for Tailwind CSS, providing pre-designed components that can be easily integrated into our project to enhance the user interface and user experience.
-
 ## Skeleton
 Skeleton is a simple, responsive boilerplate for quickly building web interfaces. It provides a basic structure and responsive grid system, ensuring that the website looks good on all devices.
  
