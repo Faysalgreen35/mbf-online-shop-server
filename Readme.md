@@ -20,6 +20,12 @@ MBF Shop is a full-stack single-page e-commerce website built with the MERN stac
 - **Fixed-Size Product Cards**: Consistent display of product information with fixed-size cards.
 
 
+## Technologies Used
+- **Frontend**: React, Flowbite, Skeleton, Tiptap, Tanstack Table, Tanstack Query, Javascript
+- **Backend**: Node.js, MongoDB, Express.js, 
+- **Authentication**: Firebase Authentication
+ 
+ 
 ## Authentication in Firebase
 Firebase Authentication is used to manage user authentication and provide a secure login/register experience. Users can sign up with their email or through social media accounts. Firebase also handles password recovery and user session management.
 
