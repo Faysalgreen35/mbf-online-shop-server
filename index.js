@@ -136,23 +136,97 @@ async function run() {
       res.send(result);;
     })
  
-    app.get('/products', async (req, res) => {
-      const page = parseInt(req.query.page);
-      const size = parseInt(req.query.size);
-      const sortField = req.query.sortField || 'price'; // default sort by price
-      const sortOrder = req.query.sortOrder === 'desc' ? -1 : 1; // default ascending
+  //   app.get('/products', async (req, res) => {
+  //     const page = parseInt(req.query.page);
+  //     const size = parseInt(req.query.size);
+  //     const sortField = req.query.sortField || 'price'; // default sort by price
+  //     const sortOrder = req.query.sortOrder === 'desc' ? -1 : 1; // default ascending
   
-      console.log('pagination query', page, size, sortField, sortOrder);
+  //     console.log('pagination query', page, size, sortField, sortOrder);
   
-      const result = await productCollection.find()
-          .sort({ [sortField]: sortOrder })
-          .skip(page * size)
-          .limit(size)
-          .toArray();
+  //     const result = await productCollection.find()
+  //         .sort({ [sortField]: sortOrder })
+  //         .skip(page * size)
+  //         .limit(size)
+  //         .toArray();
   
-      res.send(result);
-  });
-  
+  //     res.send(result);
+  // });
+
+
+  // products 
+//   app.get('/products', async (req, res) => {
+//     const page = parseInt(req.query.page) || 0;
+//     const size = parseInt(req.query.size) || 10;
+//     const sortField = req.query.sortField || 'price'; // default sort by price
+//     const sortOrder = req.query.sortOrder === 'desc' ? -1 : 1; // default ascending
+//     const searchQuery = req.query.search || ''; // Search query
+//     const brandFilter = req.query.brand || ''; // Brand filter
+//     const categoryFilter = req.query.category || ''; // Category filter
+//     const minPrice = parseFloat(req.query.minPrice) || 0; // Minimum price filter
+//     const maxPrice = parseFloat(req.query.maxPrice) || Infinity; // Maximum price filter
+
+//     console.log('pagination query', page, size, sortField, sortOrder, searchQuery, brandFilter, categoryFilter, minPrice, maxPrice);
+
+//     // Construct the query object based on filters
+//     const query = {
+//         title: { $regex: searchQuery, $options: 'i' }, // Case-insensitive search
+//         price: { $gte: minPrice, $lte: maxPrice }
+//     };
+
+//     if (brandFilter) {
+//         query.brand = brandFilter;
+//     }
+
+//     if (categoryFilter) {
+//         query.category = categoryFilter;
+//     }
+
+//     const totalItems = await productCollection.countDocuments(query);
+//     const products = await productCollection.find(query)
+//         .sort({ [sortField]: sortOrder })
+//         .skip(page * size)
+//         .limit(size)
+//         .toArray();
+
+//     res.send({ products, totalItems });
+// });
+
+app.get('/products', async (req, res) => {
+  const page = parseInt(req.query.page) || 0;
+  const size = parseInt(req.query.size) || 10;
+  const sortField = req.query.sortField || 'price'; // default sort by price
+  const sortOrder = req.query.sortOrder === 'desc' ? -1 : 1; // default ascending
+  const searchQuery = req.query.search || ''; // Search query
+  const brandFilter = req.query.brand || ''; // Brand filter
+  const categoryFilter = req.query.category || ''; // Category filter
+  const minPrice = parseFloat(req.query.minPrice) || 0; // Minimum price filter
+  const maxPrice = parseFloat(req.query.maxPrice) || Infinity; // Maximum price filter
+
+  // Construct the query object based on filters
+  const query = {
+      title: { $regex: searchQuery, $options: 'i' }, // Case-insensitive search
+      price: { $gte: minPrice, $lte: maxPrice }
+  };
+
+  if (brandFilter) {
+      query.brand = brandFilter;
+  }
+
+  if (categoryFilter) {
+      query.category = categoryFilter;
+  }
+
+  const totalItems = await productCollection.countDocuments(query);
+  const products = await productCollection.find(query)
+      .sort({ [sortField]: sortOrder })
+      .skip(page * size)
+      .limit(size)
+      .toArray();
+
+  res.send({ products, totalItems });
+});
+
     app.get('/productsCount', async(req, res) => {
         const count = await productCollection.estimatedDocumentCount();
         res.send({count});
